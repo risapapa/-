@@ -209,8 +209,9 @@
             this.FpSpd繁殖情報.Size = new System.Drawing.Size(768, 435);
             this.FpSpd繁殖情報.TabIndex = 0;
             this.FpSpd繁殖情報.VerticalScrollBarPolicy = FarPoint.Win.Spread.ScrollBarPolicy.AsNeeded;
+            this.FpSpd繁殖情報.CellClick += new FarPoint.Win.Spread.CellClickEventHandler(this.FpSpd繁殖情報_CellClick);
             this.FpSpd繁殖情報.SetViewportLeftColumn(0, 0, 5);
-            this.FpSpd繁殖情報.SetActiveViewport(0, 0, -1);
+            this.FpSpd繁殖情報.SetActiveViewport(0, -1, -1);
             // 
             // sheetView1
             // 
@@ -283,7 +284,7 @@
             dateTimeCellType1.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType1.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType1.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType1.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType1.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(8).CellType = dateTimeCellType1;
             this.sheetView1.Columns.Get(8).DataField = "分娩日";
             this.sheetView1.Columns.Get(8).Locked = true;
@@ -303,7 +304,7 @@
             dateTimeCellType2.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType2.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType2.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType2.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType2.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(10).CellType = dateTimeCellType2;
             this.sheetView1.Columns.Get(10).DataField = "最終授精日";
             this.sheetView1.Columns.Get(10).Locked = false;
@@ -331,7 +332,7 @@
             dateTimeCellType3.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType3.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType3.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType3.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType3.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(14).CellType = dateTimeCellType3;
             this.sheetView1.Columns.Get(14).DataField = "乾乳日";
             this.sheetView1.Columns.Get(14).Locked = false;
@@ -348,7 +349,7 @@
             dateTimeCellType4.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType4.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType4.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType4.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType4.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(16).CellType = dateTimeCellType4;
             this.sheetView1.Columns.Get(16).DataField = "生年月日";
             this.sheetView1.Columns.Get(16).Locked = true;
@@ -358,7 +359,7 @@
             dateTimeCellType5.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType5.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType5.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType5.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType5.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(17).CellType = dateTimeCellType5;
             this.sheetView1.Columns.Get(17).DataField = "F予定日";
             this.sheetView1.Columns.Get(17).Locked = true;
@@ -368,7 +369,7 @@
             dateTimeCellType6.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType6.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType6.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType6.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType6.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(18).CellType = dateTimeCellType6;
             this.sheetView1.Columns.Get(18).DataField = "発情1予定";
             this.sheetView1.Columns.Get(18).Locked = false;
@@ -378,7 +379,7 @@
             dateTimeCellType7.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType7.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType7.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType7.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType7.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(19).CellType = dateTimeCellType7;
             this.sheetView1.Columns.Get(19).DataField = "発情2予定";
             this.sheetView1.Columns.Get(19).Locked = false;
@@ -388,7 +389,7 @@
             dateTimeCellType8.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType8.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType8.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType8.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType8.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(20).CellType = dateTimeCellType8;
             this.sheetView1.Columns.Get(20).DataField = "発情3予定";
             this.sheetView1.Columns.Get(20).Locked = false;
@@ -398,7 +399,7 @@
             dateTimeCellType9.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType9.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType9.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType9.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType9.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(21).CellType = dateTimeCellType9;
             this.sheetView1.Columns.Get(21).DataField = "妊鑑予定日";
             this.sheetView1.Columns.Get(21).Locked = false;
@@ -408,7 +409,7 @@
             dateTimeCellType10.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType10.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType10.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType10.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType10.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(22).CellType = dateTimeCellType10;
             this.sheetView1.Columns.Get(22).DataField = "乾乳予定日";
             this.sheetView1.Columns.Get(22).Locked = false;
@@ -418,7 +419,7 @@
             dateTimeCellType11.Calendar = new System.Globalization.GregorianCalendar(System.Globalization.GregorianCalendarTypes.Localized);
             dateTimeCellType11.CalendarSurroundingDaysColor = System.Drawing.SystemColors.GrayText;
             dateTimeCellType11.MaximumTime = System.TimeSpan.Parse("23:59:59.9999999");
-            dateTimeCellType11.TimeDefault = new System.DateTime(2016, 9, 8, 14, 34, 49, 503);
+            dateTimeCellType11.TimeDefault = new System.DateTime(2016, 9, 25, 18, 4, 27, 590);
             this.sheetView1.Columns.Get(23).CellType = dateTimeCellType11;
             this.sheetView1.Columns.Get(23).DataField = "分娩予定日";
             this.sheetView1.Columns.Get(23).Locked = false;

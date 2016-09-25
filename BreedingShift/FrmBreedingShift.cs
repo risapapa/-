@@ -65,7 +65,7 @@ namespace BreedingShift
         }
 
         private void FrmBreedingShift_Shown(object sender, EventArgs e) {
-            if (MessageBox.Show(this,"!!注意!!\n実行する前に必ず『VMAPバックアップ』を実行してください。\n続けますか", "実行まえの確認事項", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No) {
+            if (MessageBox.Show(this,"!!注意!!\n実行する前に必ず『VMAPバックアップ』を実行してください。\n続けますか", "実行前の確認事項だよ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No) {
                 this.Close();
             }
         }
@@ -245,6 +245,10 @@ namespace BreedingShift
             // Assign the printer settings to the sheet and print it
             FpSpd繁殖情報.Sheets[0].PrintInfo = pi;
             FpSpd繁殖情報.PrintSheet(FpSpd繁殖情報.ActiveSheetIndex);
+        }
+
+        private void FpSpd繁殖情報_CellClick(object sender, CellClickEventArgs e) {
+
         }
     }
 
