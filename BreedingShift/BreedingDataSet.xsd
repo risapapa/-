@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BreedingDataSet" targetNamespace="http://tempuri.org/BreedingDataSet.xsd" xmlns:mstns="http://tempuri.org/BreedingDataSet.xsd" xmlns="http://tempuri.org/BreedingDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BreedingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BreedingConnectionString (Settings)" PropertyReference="ApplicationSettings.BreedingShift.Properties.Settings.GlobalReference.Default.BreedingConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="繁殖情報TableAdapter" GeneratorDataComponentClassName="繁殖情報TableAdapter" Name="繁殖情報" UserDataComponentName="繁殖情報TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BreedingConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT            基本.農家コード, 基本.個体番号, 基本.検定番号, 基本.牛床番号, 基本.産次, 繁殖成績.分娩日, 繁殖成績.最終授精日, 繁殖成績.授精回数, 繁殖成績.種牛略号, 繁殖成績.妊鑑, 繁殖成績.乾乳日, 基本.名号, 基本.生年月日, 
+                        基本.分類名, 基本.F予定日, 基本.発情1予定, 基本.発情2予定, 基本.発情3予定, 基本.妊鑑予定日, 基本.乾乳予定日, 基本.分娩予定日, RIGHT('0000000000' &amp; 基本.個体番号, 10) AS N10, LEFT(N10, 5) AS 個体番号10桁1, 
+                        Mid(N10, 6, 4) AS 個体番号10桁2, RIGHT(N10, 1) AS 個体番号10桁3, DateDiff('D', 繁殖成績.分娩日, now) AS 分娩後日数
+FROM              (繁殖成績 INNER JOIN
+                        基本 ON 繁殖成績.農家コード = 基本.農家コード AND 繁殖成績.個体番号 = 基本.個体番号 AND 繁殖成績.産次 = 基本.産次)
+WHERE             (基本.農家コード = 1) AND (基本.性別 = 0) AND (基本.除籍区分 &lt; 9)
+ORDER BY       基本.牛床番号, 基本.個体番号</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="農家コード" DataSetColumn="農家コード" />
+              <Mapping SourceColumn="個体番号" DataSetColumn="個体番号" />
+              <Mapping SourceColumn="産次" DataSetColumn="産次" />
+              <Mapping SourceColumn="分娩日" DataSetColumn="分娩日" />
+              <Mapping SourceColumn="最終授精日" DataSetColumn="最終授精日" />
+              <Mapping SourceColumn="授精回数" DataSetColumn="授精回数" />
+              <Mapping SourceColumn="種牛略号" DataSetColumn="種牛略号" />
+              <Mapping SourceColumn="妊鑑" DataSetColumn="妊鑑" />
+              <Mapping SourceColumn="乾乳日" DataSetColumn="乾乳日" />
+              <Mapping SourceColumn="検定番号" DataSetColumn="検定番号" />
+              <Mapping SourceColumn="牛床番号" DataSetColumn="牛床番号" />
+              <Mapping SourceColumn="名号" DataSetColumn="名号" />
+              <Mapping SourceColumn="生年月日" DataSetColumn="生年月日" />
+              <Mapping SourceColumn="分娩予定日" DataSetColumn="分娩予定日" />
+              <Mapping SourceColumn="乾乳予定日" DataSetColumn="乾乳予定日" />
+              <Mapping SourceColumn="妊鑑予定日" DataSetColumn="妊鑑予定日" />
+              <Mapping SourceColumn="発情1予定" DataSetColumn="発情1予定" />
+              <Mapping SourceColumn="F予定日" DataSetColumn="F予定日" />
+              <Mapping SourceColumn="発情3予定" DataSetColumn="発情3予定" />
+              <Mapping SourceColumn="発情2予定" DataSetColumn="発情2予定" />
+              <Mapping SourceColumn="分類名" DataSetColumn="分類名" />
+              <Mapping SourceColumn="N10" DataSetColumn="N10" />
+              <Mapping SourceColumn="個体番号10桁1" DataSetColumn="個体番号10桁1" />
+              <Mapping SourceColumn="個体番号10桁2" DataSetColumn="個体番号10桁2" />
+              <Mapping SourceColumn="個体番号10桁3" DataSetColumn="個体番号10桁3" />
+              <Mapping SourceColumn="分娩後日数" DataSetColumn="分娩後日数" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BreedingConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateQuery">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE          繁殖成績
+SET                  分娩日 = ?, 最終授精日 = ?, 乾乳日 = ?
+WHERE             (農家コード = ?) AND (個体番号 = ?) AND (産次 = ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="分娩日" DataSourceName="" DataTypeServer="DbType.Date" DbType="Date" Direction="Input" ParameterName="分娩日" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="分娩日" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param2" ColumnName="最終授精日" DataSourceName="" DataTypeServer="DbType.Date" DbType="Date" Direction="Input" ParameterName="最終授精日" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="最終授精日" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param3" ColumnName="乾乳日" DataSourceName="" DataTypeServer="DbType.Date" DbType="Date" Direction="Input" ParameterName="乾乳日" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="乾乳日" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param4" ColumnName="農家コード" DataSourceName="" DataTypeServer="DbType.Double" DbType="Decimal" Direction="Input" ParameterName="Original_農家コード" Precision="15" ProviderType="Double" Scale="0" Size="0" SourceColumn="農家コード" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param5" ColumnName="個体番号" DataSourceName="" DataTypeServer="DbType.Double" DbType="Decimal" Direction="Input" ParameterName="Original_個体番号" Precision="15" ProviderType="Double" Scale="0" Size="0" SourceColumn="個体番号" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param6" ColumnName="産次" DataSourceName="" DataTypeServer="DbType.Byte" DbType="Byte" Direction="Input" ParameterName="Original_産次" Precision="0" ProviderType="UnsignedTinyInt" Scale="0" Size="0" SourceColumn="産次" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BreedingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BreedingDataSet" msprop:Generator_UserDSName="BreedingDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="繁殖情報" msprop:Generator_TableClassName="繁殖情報DataTable" msprop:Generator_TableVarName="table繁殖情報" msprop:Generator_RowChangedName="繁殖情報RowChanged" msprop:Generator_TablePropName="繁殖情報" msprop:Generator_RowDeletingName="繁殖情報RowDeleting" msprop:Generator_RowChangingName="繁殖情報RowChanging" msprop:Generator_RowEvHandlerName="繁殖情報RowChangeEventHandler" msprop:Generator_RowDeletedName="繁殖情報RowDeleted" msprop:Generator_RowClassName="繁殖情報Row" msprop:Generator_UserTableName="繁殖情報" msprop:Generator_RowEvArgName="繁殖情報RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="農家コード" msprop:Generator_ColumnVarNameInTable="column農家コード" msprop:Generator_ColumnPropNameInRow="農家コード" msprop:Generator_ColumnPropNameInTable="農家コードColumn" msprop:Generator_UserColumnName="農家コード" type="xs:double" minOccurs="0" />
+              <xs:element name="個体番号" msprop:Generator_ColumnVarNameInTable="column個体番号" msprop:Generator_ColumnPropNameInRow="個体番号" msprop:Generator_ColumnPropNameInTable="個体番号Column" msprop:Generator_UserColumnName="個体番号" type="xs:double" minOccurs="0" />
+              <xs:element name="産次" msprop:Generator_ColumnVarNameInTable="column産次" msprop:Generator_ColumnPropNameInRow="産次" msprop:Generator_ColumnPropNameInTable="産次Column" msprop:Generator_UserColumnName="産次" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="分娩日" msprop:Generator_ColumnVarNameInTable="column分娩日" msprop:Generator_ColumnPropNameInRow="分娩日" msprop:Generator_ColumnPropNameInTable="分娩日Column" msprop:Generator_UserColumnName="分娩日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="最終授精日" msprop:Generator_ColumnVarNameInTable="column最終授精日" msprop:Generator_ColumnPropNameInRow="最終授精日" msprop:Generator_ColumnPropNameInTable="最終授精日Column" msprop:Generator_UserColumnName="最終授精日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="授精回数" msprop:Generator_ColumnVarNameInTable="column授精回数" msprop:Generator_ColumnPropNameInRow="授精回数" msprop:Generator_ColumnPropNameInTable="授精回数Column" msprop:Generator_UserColumnName="授精回数" type="xs:short" minOccurs="0" />
+              <xs:element name="種牛略号" msprop:Generator_ColumnVarNameInTable="column種牛略号" msprop:Generator_ColumnPropNameInRow="種牛略号" msprop:Generator_ColumnPropNameInTable="種牛略号Column" msprop:Generator_UserColumnName="種牛略号" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="妊鑑" msprop:Generator_ColumnVarNameInTable="column妊鑑" msprop:Generator_ColumnPropNameInRow="妊鑑" msprop:Generator_ColumnPropNameInTable="妊鑑Column" msprop:Generator_UserColumnName="妊鑑" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="乾乳日" msprop:Generator_ColumnVarNameInTable="column乾乳日" msprop:Generator_ColumnPropNameInRow="乾乳日" msprop:Generator_ColumnPropNameInTable="乾乳日Column" msprop:Generator_UserColumnName="乾乳日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="検定番号" msprop:Generator_ColumnVarNameInTable="column検定番号" msprop:Generator_ColumnPropNameInRow="検定番号" msprop:Generator_ColumnPropNameInTable="検定番号Column" msprop:Generator_UserColumnName="検定番号" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="牛床番号" msprop:Generator_ColumnVarNameInTable="column牛床番号" msprop:Generator_ColumnPropNameInRow="牛床番号" msprop:Generator_ColumnPropNameInTable="牛床番号Column" msprop:Generator_UserColumnName="牛床番号" type="xs:short" minOccurs="0" />
+              <xs:element name="名号" msprop:Generator_ColumnVarNameInTable="column名号" msprop:Generator_ColumnPropNameInRow="名号" msprop:Generator_ColumnPropNameInTable="名号Column" msprop:Generator_UserColumnName="名号" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="生年月日" msprop:Generator_ColumnVarNameInTable="column生年月日" msprop:Generator_ColumnPropNameInRow="生年月日" msprop:Generator_ColumnPropNameInTable="生年月日Column" msprop:Generator_UserColumnName="生年月日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="分娩予定日" msprop:Generator_ColumnVarNameInTable="column分娩予定日" msprop:Generator_ColumnPropNameInRow="分娩予定日" msprop:Generator_ColumnPropNameInTable="分娩予定日Column" msprop:Generator_UserColumnName="分娩予定日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="乾乳予定日" msprop:Generator_ColumnVarNameInTable="column乾乳予定日" msprop:Generator_ColumnPropNameInRow="乾乳予定日" msprop:Generator_ColumnPropNameInTable="乾乳予定日Column" msprop:Generator_UserColumnName="乾乳予定日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="妊鑑予定日" msprop:Generator_ColumnVarNameInTable="column妊鑑予定日" msprop:Generator_ColumnPropNameInRow="妊鑑予定日" msprop:Generator_ColumnPropNameInTable="妊鑑予定日Column" msprop:Generator_UserColumnName="妊鑑予定日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="発情1予定" msprop:Generator_ColumnVarNameInTable="column発情1予定" msprop:Generator_ColumnPropNameInRow="発情1予定" msprop:Generator_ColumnPropNameInTable="発情1予定Column" msprop:Generator_UserColumnName="発情1予定" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="F予定日" msprop:Generator_ColumnVarNameInTable="columnF予定日" msprop:Generator_ColumnPropNameInRow="F予定日" msprop:Generator_ColumnPropNameInTable="F予定日Column" msprop:Generator_UserColumnName="F予定日" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="発情3予定" msprop:Generator_ColumnVarNameInTable="column発情3予定" msprop:Generator_ColumnPropNameInRow="発情3予定" msprop:Generator_ColumnPropNameInTable="発情3予定Column" msprop:Generator_UserColumnName="発情3予定" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="発情2予定" msprop:Generator_ColumnVarNameInTable="column発情2予定" msprop:Generator_ColumnPropNameInRow="発情2予定" msprop:Generator_ColumnPropNameInTable="発情2予定Column" msprop:Generator_UserColumnName="発情2予定" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="分類名" msprop:Generator_ColumnVarNameInTable="column分類名" msprop:Generator_ColumnPropNameInRow="分類名" msprop:Generator_ColumnPropNameInTable="分類名Column" msprop:Generator_UserColumnName="分類名" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="N10" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnN10" msprop:Generator_ColumnPropNameInRow="N10" msprop:Generator_ColumnPropNameInTable="N10Column" msprop:Generator_UserColumnName="N10" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="個体番号10桁1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="column個体番号10桁1" msprop:Generator_ColumnPropNameInRow="個体番号10桁1" msprop:Generator_ColumnPropNameInTable="個体番号10桁1Column" msprop:Generator_UserColumnName="個体番号10桁1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="個体番号10桁2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="column個体番号10桁2" msprop:Generator_ColumnPropNameInRow="個体番号10桁2" msprop:Generator_ColumnPropNameInTable="個体番号10桁2Column" msprop:Generator_UserColumnName="個体番号10桁2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="個体番号10桁3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="column個体番号10桁3" msprop:Generator_ColumnPropNameInRow="個体番号10桁3" msprop:Generator_ColumnPropNameInTable="個体番号10桁3Column" msprop:Generator_UserColumnName="個体番号10桁3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="分娩後日数" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="column分娩後日数" msprop:Generator_ColumnPropNameInRow="分娩後日数" msprop:Generator_ColumnPropNameInTable="分娩後日数Column" msprop:Generator_UserColumnName="分娩後日数" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:繁殖情報" />
+      <xs:field xpath="mstns:農家コード" />
+      <xs:field xpath="mstns:個体番号" />
+      <xs:field xpath="mstns:産次" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

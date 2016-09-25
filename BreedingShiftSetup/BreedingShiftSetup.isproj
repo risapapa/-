@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\BreedingShift\BreedingShift.csproj">
+			<Name>BreedingShift</Name>
+			<Project>{AD000995-4323-4B9F-B12D-1C3CF4975063}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\乳牛個体台帳\ClassComLedger\ClassComLedger.csproj">
+			<Name>ClassComLedger</Name>
+			<Project>{E1FFDC00-217B-4CCD-8D0D-4B7BBBEF123E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\ClassDao\ClassDao.csproj">
+			<Name>ClassDao</Name>
+			<Project>{E262CA84-2914-4F4E-AB8A-2E636F2F6E3C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\ClassXMLFileIO\ClassXMLFileIO.csproj">
+			<Name>ClassXMLFileIO</Name>
+			<Project>{72A5F92F-8CD6-4D87-868F-48074475E207}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>
